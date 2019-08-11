@@ -19,8 +19,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
 //routes
+app.use('/', require('./routes/index'));
 app.use(morgan('start'));
-app.get('/', indexRoutes);
+//app.get('/', indexRoutes);
   
 app.listen(app.get('port'), () => {
     console.log(`server on port ${app.get('port')}`);
